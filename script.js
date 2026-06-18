@@ -61,7 +61,7 @@ const menuItems = [
     kkal: 280,
     price: 20000,
     isChecklist: false,
-    image: ""
+    image: "assets/images/ayam-bakar-madu.png"
   },
   {
     name: "Rendang Daging Sapi",
