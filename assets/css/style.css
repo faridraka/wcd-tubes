@@ -1,0 +1,521 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap");
+
+:root {
+  /* ========================
+     BACKGROUND & CANVAS
+     ======================== */
+  --color-bg: #0b0f19;
+  --color-canvas: #0b0f19;
+
+  /* ========================
+     SLATE SURFACES
+     ======================== */
+  --color-surface-1: #151c2c;
+  --color-surface-2: #1e293b;
+
+  /* ========================
+     FOREST SURFACES (Slate Palette)
+     ======================== */
+  --color-surface: #151c2c;
+  --color-surface-dim: #151c2c;
+  --color-surface-bright: #1e293b;
+  --color-surface-lowest: #0f172a;
+  --color-surface-low: #151c2c;
+  --color-surface-container: #1e293b;
+  --color-surface-high: #334155;
+  --color-surface-highest: #475569;
+  --color-surface-variant: #1e293b;
+
+  /* ========================
+     TEXT
+     ======================== */
+  --color-ink: #ffffff;
+  --color-ink-muted: #94a3b8;
+  --color-text: #ffffff;
+  --color-text-muted: #94a3b8;
+  --color-text-subtle: #64748b;
+  --color-text-inverse: #0b0f19;
+  --color-on-surface: #ffffff;
+  --color-on-surface-variant: #94a3b8;
+  --color-on-background: #ffffff;
+
+  /* ========================
+     PRIMARY (Hijau Neon)
+     ======================== */
+  --color-primary-fixed: #2ecc71;
+  --color-primary-fixed-dim: #4ade80;
+  --color-primary: #2ecc71;
+  --color-primary-container: rgba(46, 204, 113, 0.1);
+  --color-primary-inverse: #0b0f19;
+  --color-primary-on: #0b0f19;
+  --color-primary-container-on: #4ade80;
+  --color-primary-fixed-on: #0b0f19;
+  --color-primary-fixed-variant-on: #27ae60;
+  --color-surface-tint: #4ade80;
+
+  /* ========================
+     SECONDARY
+     ======================== */
+  --color-secondary-fixed: #ffdbca;
+  --color-secondary-fixed-dim: #ffb690;
+  --color-secondary: #f97316;
+  --color-secondary-container: #ec6a06;
+
+  /* ========================
+     OUTLINE & BORDER
+     ======================== */
+  --color-border: #1e293b;
+  --color-outline: #475569;
+  --color-outline-variant: #1e293b;
+
+  /* ========================
+     NUTRITION CATEGORIES
+     ======================== */
+  --color-carb: #60a5fa;      
+  --color-protein: #f87171;   
+  --color-vegetable: #34d399; 
+  --color-fruit: #fbbf24;     
+  --color-drink: #c084fc;     
+
+  /* ========================
+     EFFECTS & SHADOWS
+     ======================== */
+  --color-overlay: rgba(0, 0, 0, 0.45);
+  --color-glow-primary: rgba(46, 204, 113, 0.15);
+  --shadow-soft: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Inter", "JetBrains Mono", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1.6;
+  color: var(--color-text);
+  background-color: var(--color-canvas);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Membuat konten terdistribusi seimbang secara vertikal */
+  align-items: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    line-height: 1.1;
+}
+
+/* ==========================================================================
+   LAYOUT CONTAINERS (Dilebarkan menjadi 1440px agar tidak terlalu banyak blank space)
+   ========================================================================== */
+.container {
+    width: 100%;
+    max-width: 1440px; 
+    padding: 60px 40px; /* Ditambahkan padding agar transisi space ke ujung layar lebih halus */
+    flex: 1 0 auto;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   HEADER STYLES
+   ========================================================================== */
+.header {
+    margin-bottom: 35px;
+}
+
+.title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: var(--color-primary-fixed-dim);
+    margin-bottom: 8px;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+}
+
+/* ==========================================================================
+   MAIN LAYOUT (Proporsi Kolom Diubah agar Tabel Lebih Luas)
+   ========================================================================== */
+.main-wrapper {
+    display: grid;
+    grid-template-columns: 2fr 0.9fr; /* Tabel dibuat mengambil sisa stretch space lebih dominan */
+    gap: 35px;
+    align-items: start;
+}
+
+/* Breakpoint Monitor Kecil / Tablet */
+@media (max-width: 1150px) {
+    .main-wrapper {
+        grid-template-columns: 1.5fr 1fr;
+    }
+}
+
+@media (max-width: 950px) {
+    .main-wrapper {
+        grid-template-columns: 1fr; /* Stack vertikal saat layar mengecil */
+        gap: 30px;
+    }
+    .container {
+        padding: 30px 20px;
+    }
+}
+
+/* ==========================================================================
+   LEFT COLUMN - MENU TABLE
+   ========================================================================== */
+.menu-section {
+    background-color: var(--color-surface-low);
+    border-radius: 14px;
+    padding: 16px;
+    border: 1px solid var(--color-outline-variant);
+    box-shadow: var(--shadow-soft);
+    overflow-x: auto;
+}
+
+.menu-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.menu-table th {
+    font-size: 0.75rem;
+    letter-spacing: 0.06em;
+    color: var(--color-primary-fixed-dim);
+    padding: 20px 16px;
+    font-weight: 600;
+    border-bottom: 1px solid var(--color-outline-variant);
+}
+
+.menu-table td {
+    padding: 20px 16px;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(30, 41, 59, 0.4);
+    vertical-align: middle;
+}
+
+.menu-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Thumbnail Placeholder */
+.thumb-placeholder {
+    width: 52px;
+    height: 52px;
+    background: var(--color-surface-lowest);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid var(--color-outline-variant);
+}
+
+.thumb-placeholder .emoji {
+    font-size: 1.4rem;
+}
+
+.menu-name {
+    font-weight: 600;
+    color: var(--color-ink);
+}
+
+.text-muted {
+    color: var(--color-text-muted);
+}
+
+/* Badges Kategori */
+.badge {
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    display: inline-block;
+}
+
+.badge-pokok { background: rgba(29, 78, 216, 0.15); color: var(--color-carb); }
+.badge-lauk { background: rgba(153, 27, 27, 0.25); color: var(--color-protein); }
+.badge-sayur { background: rgba(6, 95, 70, 0.25); color: var(--color-vegetable); }
+.badge-buah { background: rgba(154, 52, 18, 0.2); color: var(--color-fruit); }
+.badge-minuman { background: rgba(88, 28, 135, 0.25); color: var(--color-drink); }
+
+/* ==========================================================================
+   CHECKBOX COMPONENT (Fixed Centering & Alignment)
+   ========================================================================== */
+.custom-checkbox {
+    appearance: none; 
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--color-text-subtle); 
+    border-radius: 4px;
+    background-color: transparent;
+    cursor: pointer;
+    
+    /* Menggunakan flex standar untuk penengah vertikal/horizontal */
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+    /* Penyelaras vertikal agar sejajar rapi dengan teks di dalam baris <td> */
+    vertical-align: middle; 
+    
+    position: relative;
+    transition: all 0.2s ease;
+    opacity: 0.4; 
+}
+
+/* Hover Effect */
+.custom-checkbox:hover {
+    opacity: 0.8;
+    border-color: var(--color-primary-fixed-dim);
+}
+
+/* Checked State */
+.custom-checkbox:checked {
+    background-color: var(--color-primary-fixed-dim);
+    border-color: var(--color-primary-fixed-dim);
+    opacity: 1;
+}
+
+/* Tanda Centang (Checkmark) dengan kalkulasi posisi box murni */
+.custom-checkbox:checked::before {
+    content: "";
+    position: absolute;
+    width: 5px;
+    height: 10px;
+    border-right: 2px solid var(--color-primary-on);
+    border-bottom: 2px solid var(--color-primary-on);
+    transform: rotate(45deg);
+    
+    /* Menggeser poros sedikit ke atas secara absolut untuk kompensasi rotasi */
+    top: 2px; 
+}
+
+/* ==========================================================================
+   RIGHT COLUMN - SIDEBAR SUMMARY
+   ========================================================================== */
+.sidebar {
+    background-color: var(--color-surface-low);
+    border-radius: 14px;
+    padding: 32px 28px;
+    border: 1px solid var(--color-outline-variant);
+    box-shadow: var(--shadow-soft);
+}
+
+.sidebar-title {
+    font-size: 1rem;
+    color: var(--color-primary-fixed-dim);
+    margin-bottom: 22px;
+    font-weight: 600;
+}
+
+/* Grid Box Kosong */
+.selected-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+    margin-bottom: 28px;
+}
+
+.grid-box {
+    background-color: var(--color-surface-container);
+    border-radius: 10px;
+    aspect-ratio: 1.25 / 1;
+}
+
+/* Kebutuhan Gizi Section */
+.gizi-section {
+    margin-bottom: 24px;
+}
+
+.section-subtitle {
+    font-size: 0.75rem;
+    letter-spacing: 0.05em;
+    color: var(--color-text-subtle);
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.gizi-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.gizi-tag {
+    font-size: 0.75rem;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: var(--color-surface-container);
+    color: var(--color-text-muted);
+    border: 1px solid var(--color-border);
+    display: flex;
+    align-items: center;
+    transition: all 0.2s ease;
+}
+
+.gizi-tag.checked {
+    background: rgba(46, 204, 113, 0.1);
+    border-color: rgba(46, 204, 113, 0.3);
+    color: var(--color-primary-fixed-dim);
+}
+
+.gizi-tag.checked::before {
+    content: "✓";
+    margin-right: 6px;
+    color: var(--color-primary-fixed-dim);
+    font-weight: bold;
+}
+
+/* Alert Box Menu Seimbang */
+.alert-box {
+    background: var(--color-primary-container);
+    border: 1px solid rgba(46, 204, 113, 0.25);
+    padding: 14px 18px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 28px;
+    box-shadow: 0 0 15px var(--color-glow-primary);
+}
+
+.alert-icon {
+    background: var(--color-primary);
+    color: var(--color-primary-on);
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
+
+.alert-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--color-primary-fixed-dim);
+}
+
+.alert-sub {
+    font-size: 0.65rem;
+    color: var(--color-text-muted);
+    letter-spacing: 0.06em;
+    font-weight: bold;
+}
+
+/* Summary Details */
+.summary-total {
+    border-top: 1px solid var(--color-outline-variant);
+    padding-top: 18px;
+    margin-bottom: 24px;
+}
+
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+    color: var(--color-text-muted);
+}
+
+.total-val {
+    color: var(--color-ink);
+    font-weight: 700;
+}
+
+.green-text {
+    color: var(--color-primary-fixed-dim);
+}
+
+/* Button Simpan Planner */
+.btn-submit {
+    width: 100%;
+    background-color: var(--color-primary-fixed-dim);
+    color: var(--color-primary-fixed-on);
+    border: none;
+    padding: 16px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: 0 4px 14px rgba(46, 204, 113, 0.3);
+    transition: all 0.2s ease;
+}
+
+.btn-submit:hover {
+    background-color: var(--color-primary-fixed);
+    transform: translateY(-1px);
+}
+
+/* ==========================================================================
+   FOOTER STYLES (Mengikuti Max-Width Baru 1440px)
+   ========================================================================== */
+.footer {
+    width: 100%;
+    background-color: #080b12; 
+    border-top: 1px solid var(--color-outline-variant);
+    display: flex;
+    justify-content: center;
+}
+
+.footer-container {
+    width: 100%;
+    max-width: 1440px; 
+    padding: 30px 40px; /* Padding disamakan dengan konten utama */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.85rem;
+    color: var(--color-text-subtle);
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.footer-logo {
+    color: var(--color-primary-fixed-dim);
+    font-weight: 700;
+}
+
+.footer-links a {
+    color: var(--color-text-subtle);
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: var(--color-text);
+}
+
+/* Penyesuaian Footer pada Layar Kecil */
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+        padding: 24px 20px;
+    }
+    .footer-links a {
+        margin: 0 10px;
+    }
+}
