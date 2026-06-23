@@ -1,33 +1,82 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <title>Home</title>
-  </head>
-  <body>
-    <header class="navbar-container">
-      <div class="navbar">
-        <h2>Menu Planner</h2>
-        <nav>
-          <a href="index.html" class="active">Home</a>
-          <a href="planner.html">Planner</a>
-        </nav>
-      </div>
-    </header>
-    <main class="container"></main>
-    <footer class="footer">
-      <div class="footer-container">
-        <div class="footer-logo">Menu Planner</div>
-        <div class="footer-copy">© 2024 Menu Planner. All rights reserved.</div>
-        <div class="footer-links">
-          <a href="#">Privacy Policy</a>
-          <a href="#">Terms of Service</a>
-          <a href="#">Contact</a>
-        </div>
-      </div>
-    </footer>
-    <script src="assets/js/script.js"></script>
-  </body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <title>Home</title>
+    </head>
+    <body>
+        <header class="navbar-container">
+            <div class="navbar">
+                <h2>Menu Planner</h2>
+                <nav>
+                    <a href="index.html" class="active">Home</a>
+                    <a href="planner.html">Planner</a>
+                </nav>
+            </div>
+        </header>
+        <main class="container">
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h3 class="shiny-text">SEHAT & PRAKTIS</h3>
+
+                    <h1 class="hero-title">
+                        Makan Enak, <span>Gizi Tetap Terjaga.</span>
+                    </h1>
+                    <p>
+                        Rencanakan menu harianmu dengan 5 kategori gizi seimbang
+                        secara praktis dan interaktif. Mulai hidup sehat dari
+                        piringmu hari ini.
+                    </p>
+
+                    <div class="wrap-buttons">
+                        <a href="planner.html" class="btn primary">
+                            Mulai Rencanakan Menu
+                        </a>
+                        <a href="#feature-section" class="btn outline">
+                            Pelajari Fitur
+                        </a>
+                    </div>
+                </div>
+                <aside class="hero-image">
+                    <img src="/assets/images/hero-img.png" alt="Hero Icon" />
+                    <div class="overlay-text bottom left">
+                        <img src="/assets/icons/daun.svg" alt="Daun Icon" class="primary" />
+                        <div class="text-wrapper">
+                            <h4>Sayuran Segar</h4>
+                            <h3>100% Origanik</h3>
+                        </div>
+                    </div>
+                    <div class="overlay-text right top">
+                        <img
+                            src="/assets/icons/thunder.svg"
+                            alt="thunder.svg Icon"
+                            class="secondary"
+                        />
+                        <div class="text-wrapper">
+                            <h4>Energi Hari ini</h4>
+                            <h3>100 kkal</h3>
+                        </div>
+                    </div>
+                </aside>
+            </section>
+            <section class="feature-section" id="feature-section"></section>
+            <section class="menu-favorite"></section>
+        </main>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-logo">Menu Planner</div>
+                <div class="footer-copy">
+                    © 2024 Menu Planner. All rights reserved.
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </footer>
+        <script src="assets/js/script.js"></script>
+    </body>
 </html>
