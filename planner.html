@@ -1,91 +1,90 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="id">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="assets/css/style.css" />
     <title>Planner - Menu Harian</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="container">
-        <header class="header">
-            <h1 class="title">Pilih Menu Harian</h1>
-            <p class="subtitle">Sesuaikan asupan nutrisi Anda dengan koleksi menu segar kami.</p>
-        </header>
+      <header class="header">
+        <h1 class="title">Pilih Menu Harian</h1>
+        <p class="subtitle">
+          Sesuaikan asupan nutrisi Anda dengan koleksi menu segar kami.
+        </p>
+      </header>
 
-        <main class="main-wrapper">
-            <section class="menu-section">
-                <table class="menu-table">
-                    <thead>
-                        <tr>
-                            <th>THUMBNAIL</th>
-                            <th>NAMA MENU</th>
-                            <th>KATEGORI</th>
-                            <th>KALORI</th>
-                            <th>HARGA</th>
-                            <th>PILIH</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        </tbody>
-                </table>
-            </section>
+      <main class="main-wrapper">
+        <section class="menu-section">
+          <table class="menu-table">
+            <thead>
+              <tr>
+                <th>THUMBNAIL</th>
+                <th>NAMA MENU</th>
+                <th>KATEGORI</th>
+                <th>KALORI</th>
+                <th>HARGA</th>
+                <th>PILIH</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </section>
 
-            <aside class="sidebar">
-                <h3 class="sidebar-title">Menu Pilihanmu</h3>
-                
-                <div class="selected-grid">
-                    </div>
+        <aside class="sidebar">
+          <h3 class="sidebar-title">Menu Pilihanmu</h3>
 
-                <div class="gizi-section">
-                    <h4 class="section-subtitle">KEBUTUHAN GIZI</h4>
-                    <div class="gizi-badges">
-                        <span class="gizi-tag" data-category="Pokok">Pokok</span>
-                        <span class="gizi-tag" data-category="Lauk-Pauk">Lauk-Pauk</span>
-                        <span class="gizi-tag" data-category="Sayur">Sayur</span>
-                        <span class="gizi-tag" data-category="Buah">Buah</span>
-                        <span class="gizi-tag" data-category="Minuman">Minuman</span>
-                    </div>
-                </div>
+          <div class="selected-grid"></div>
 
-                <div class="alert-box">
-                    <div class="alert-icon">✓</div>
-                    <div>
-                        <div class="alert-title">Menu Seimbang!</div>
-                        <div class="alert-sub">NUTRISI TERPENUHI</div>
-                    </div>
-                </div>
-
-                <div class="summary-total">
-                    <div class="total-row">
-                        <span>Total Kalori</span>
-                        <span class="total-val green-text">0 kkal</span>
-                    </div>
-                    <div class="total-row">
-                        <span>Total Harga</span>
-                        <span class="total-val">Rp 0</span>
-                    </div>
-                </div>
-
-                <button class="btn-submit">Simpan Planner</button>
-            </aside>
-        </main>
-    </div>
-    
-    <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-logo">Menu Planner</div>
-            <div class="footer-copy">© 2024 Menu Planner. All rights reserved.</div>
-            <div class="footer-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Contact</a>
+          <div class="gizi-section">
+            <h4 class="section-subtitle">KEBUTUHAN GIZI</h4>
+            <div class="gizi-badges">
+              <span class="gizi-tag" data-category="Pokok">Pokok</span>
+              <span class="gizi-tag" data-category="Lauk-Pauk">Lauk-Pauk</span>
+              <span class="gizi-tag" data-category="Sayur">Sayur</span>
+              <span class="gizi-tag" data-category="Buah">Buah</span>
+              <span class="gizi-tag" data-category="Minuman">Minuman</span>
             </div>
+          </div>
+
+          <div class="alert-box">
+            <div class="alert-icon">✓</div>
+            <div>
+              <div class="alert-title">Menu Seimbang!</div>
+              <div class="alert-sub">NUTRISI TERPENUHI</div>
+            </div>
+          </div>
+
+          <div class="summary-total">
+            <div class="total-row">
+              <span>Total Kalori</span>
+              <span class="total-val green-text">0 kkal</span>
+            </div>
+            <div class="total-row">
+              <span>Total Harga</span>
+              <span class="total-val">Rp 0</span>
+            </div>
+          </div>
+
+          <button class="btn-submit">Simpan Planner</button>
+        </aside>
+      </main>
+    </div>
+
+    <footer class="footer">
+      <div class="footer-container">
+        <div class="footer-logo">Menu Planner</div>
+        <div class="footer-copy">© 2024 Menu Planner. All rights reserved.</div>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Contact</a>
         </div>
+      </div>
     </footer>
 
     <script src="assets/js/menu-data.js"></script>
     <script src="assets/js/planner.js"></script>
-</body>
+  </body>
 </html>
