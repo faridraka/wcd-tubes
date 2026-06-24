@@ -178,14 +178,25 @@ function updatePlannerPage() {
     }
   }
 
-  // --- STEP 5: Toggle Display for "Menu Seimbang!" Badge ---
-  // Must satisfy all 5 dynamic conditions
+  // --- STEP 5: Toggle Display and Content for Dynamic Alert Box ---
+  const alertIcon = balancedMenuAlert.querySelector(".alert-icon");
+  const alertTitle = balancedMenuAlert.querySelector(".alert-title");
+  const alertSub = balancedMenuAlert.querySelector(".alert-sub");
+
   if (hasCarb === true && hasProtein === true && hasVegetable === true && hasFruit === true && hasDrink === true) {
-    balancedMenuAlert.style.display = "flex";
+    // SEIMBANG STATE (Green Neon)
+    balancedMenuAlert.classList.remove("unresolved");
+    alertIcon.textContent = "✓";
+    alertTitle.textContent = "Menu Seimbang!";
+    alertSub.textContent = "NUTRISI TERPENUHI";
   } else {
-    balancedMenuAlert.style.display = "none";
+    // BELUM SEIMBANG STATE (Orange/Secondary Accent)
+    balancedMenuAlert.classList.add("unresolved");
+    alertIcon.textContent = "!";
+    alertTitle.textContent = "Menu Belum Seimbang";
+    alertSub.textContent = "PILIH MINIMAL 1 ITEM PER KATEGORI";
   }
-}
+} // <--- Pembungkus fungsi updatePlannerPage() dikunci dengan benar di sini!
 
 // ==========================================================================
 // 5. RUNTIME INITIALIZATION (Bootstrap System)
