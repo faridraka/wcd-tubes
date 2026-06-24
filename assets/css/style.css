@@ -4,7 +4,7 @@
     /* ========================
      BACKGROUND & CANVAS
      ======================== */
-    --color-bg: #0b0f19;
+    --color-bg: #0f172a;
     --color-canvas: #0b0f19;
 
     /* ========================
@@ -107,7 +107,7 @@ body {
     font-style: normal;
     line-height: 1.6;
     color: var(--color-text);
-    background-color: var(--color-canvas);
+    background-color: var(--color-bg);
     min-height: 100vh;
     display: flex;
     flex-direction: column;
@@ -134,6 +134,9 @@ a {
     position: sticky;
     padding: 16px 40px;
     background-color: var(--color-primary-container);
+    top: 0;
+    z-index: 100;
+    backdrop-filter: blur(10px);
 }
 
 .navbar {
@@ -179,7 +182,7 @@ a {
 
 .hero-section {
     width: 100%;
-    margin: 88px 0;
+    padding: 88px 40px;
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -353,6 +356,77 @@ a {
     bottom: 0;
 }
 
+/* Feature Section */
+.feature-section {
+    background-color: var(--color-canvas);
+    padding: 64px 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 48px;
+}
+
+.feature-section .text-wrapper {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.feature-section .text-wrapper h5 {
+    font-weight: 600;
+    font-size: 24px;
+}
+
+.feature-section .text-wrapper p {
+    color: var(--color-text-muted);
+}
+
+.feature-card-wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 32px;
+    width: 100%;
+}
+
+.feature-card-wrapper .feature-card {
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    background-color: var(--color-surface);
+    gap: 8px;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+}
+
+.feature-card-wrapper .feature-card img {
+    background-color: rgb(from var(--color-surface-highest) r g b/ 0.3);
+    padding: 16px;
+    width: 56px;
+    height: 56px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+}
+
+.feature-card-wrapper .feature-card h5 {
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 4px;
+}
+
+.feature-card-wrapper .feature-card p {
+    color: var(--color-text-muted);
+}
+
 /* ==========================================================================
    LAYOUT CONTAINERS (Dilebarkan menjadi 1440px agar tidak terlalu banyak blank space)
    ========================================================================== */
@@ -408,7 +482,7 @@ a {
         font-size: 40px;
     }
 
-    .btn{
+    .btn {
         font-size: 16px;
     }
 
@@ -442,7 +516,8 @@ a {
     .hero-section {
         flex-direction: column-reverse;
         text-align: center;
-        margin: 48px 0;
+        padding: 48px 20px;
+        gap: 40px;
     }
 
     .hero-content {
@@ -466,6 +541,21 @@ a {
     .hero-image > img {
         width: 380px;
         height: 380px;
+    }
+
+    .feature-section {
+        padding: 48px 20px;
+        gap: 32px;
+    }
+
+    .feature-card-wrapper {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .feature-card {
+        flex: 0 0 calc(50% - 10px);
+        min-width: 280px;
     }
 }
 
@@ -779,7 +869,7 @@ a {
    ========================================================================== */
 .footer {
     width: 100%;
-    background-color: #080b12;
+    background-color: var(--color-canvas);
     border-top: 1px solid var(--color-outline-variant);
     display: flex;
     justify-content: center;
@@ -893,6 +983,39 @@ a {
     }
 
     .overlay-text .text-wrapper h3 {
+        font-size: 14px;
+    }
+
+    .feature-section {
+        padding: 40px 20px;
+    }
+
+    .feature-section .text-wrapper h3 {
+        font-size: 28px;
+    }
+
+    .feature-section .text-wrapper p {
+        font-size: 14px;
+    }
+
+    .feature-card-wrapper {
+        flex-direction: column;
+    }
+
+    .feature-card-wrapper .feature-card {
+        padding: 20px;
+    }
+
+    .feature-card-wrapper .feature-card img {
+        width: 52px;
+        height: 52px;
+    }
+
+    .feature-card-wrapper .feature-card h5 {
+        font-size: 18px;
+    }
+
+    .feature-card-wrapper .feature-card p {
         font-size: 14px;
     }
 }
