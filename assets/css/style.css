@@ -912,3 +912,203 @@ a {
     color: var(--color-text);
 }
 
+
+/* ================= SECTION STATISTIK ================= */
+.stats {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  background-color: var(--color-canvas);
+  padding: 64px 40px;
+  border: 1px solid var(--color-surface-bright);
+  text-align: center;
+}
+
+.stat-item h2 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 5px;
+}
+
+.stat-item h2.primary{
+    color: var(--color-primary);
+    background-color: transparent;
+}
+
+.stat-item h2.secondary{
+    color: var(--color-secondary);
+    background-color: transparent;
+}
+
+.stat-item h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.stat-item p {
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+/* ================= SECTION TESTIMONI ================= */
+.testimonial-section {
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 48px;
+  padding: 64px 40px;
+}
+
+.testimonial-container {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  align-items: stretch;
+}
+
+.testimonial-card {
+  background-color: var(--color-surface-2);
+  border: 1px solid var(--color-surface-highest);
+  border-radius: 16px;
+  padding: 30px 24px;
+  flex: 1;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  min-height: 240px;
+}
+
+.testimonial-card.active {
+  border: 1px solid var(--color-primary);
+  box-shadow: 0 10px 25px -5px rgb(from var(--color-primary) r g b/0.2);
+}
+
+.testimonial-card .badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: var(--color-primary);
+  color: var(--color-bg);
+  font-size: 0.65rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 9999px;
+  letter-spacing: 0.05em;
+}
+
+.testimonial-card .stars {
+  color: var(--color-secondary);
+  font-size: 1.1rem;
+  margin-bottom: 15px;
+}
+
+.testimonial-card p {
+  font-size: 0.9rem;
+  color: var(--color-text);
+  line-height: 1.6;
+  margin-bottom: 25px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;
+}
+
+.profile img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile h4 {
+  font-size: 0.9rem;
+  font-weight: 700;
+}
+
+.profile span {
+  font-size: 0.75rem;
+  color: var(--color-text-muted);
+  display: block;
+  margin-top: 2px;
+}
+
+.cta {
+  width: 100%;
+  max-width: 1000px;
+  background: linear-gradient(135deg, var(--color-primary-fixed) 0%, var(--color-primary) 50%, var(--color-primary-fixed-variant-on) 100%);
+  padding: 50px 40px;
+  margin: 64px auto;
+  border-radius: 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 20px 40px -15px rgb(from var(--color-primary) r g b / 0.3);
+}
+
+.cta::before {
+  content: "";
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  width: 180px;
+  height: 180px;
+  background-color: rgb(from var(--color-bg) r g b / 0.7);
+  border-radius: 50%;
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+.cta::after {
+  content: "";
+  position: absolute;
+  top: -50px;
+  right: -50px;
+  width: 180px;
+  height: 180px;
+  background-color: rgb(from var(--color-text) r g b / 0.5);
+  border-radius: 50%;
+  filter: blur(30px);
+  pointer-events: none;
+}
+
+.cta h2 {
+  color: var(--color-bg);
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.cta p {
+  color: var(--color-surface);
+  font-size: 1rem;
+  max-width: 600px;
+  margin: 0 auto 30px auto;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.cta button {
+  background-color: var(--color-surface);
+  color: var(--color-text);
+  border: none;
+  padding: 14px 28px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 20px rgb(from var(--color-bg) r g b / 0.2);
+}
+
+.cta button:hover {
+  background-color: #111c3a;
+  transform: translateY(-2px);
+}
