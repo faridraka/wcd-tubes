@@ -1,13 +1,179 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <title>Home</title>
-</head>
-<body>
-    test
-    <script src="assets/js/script.js"></script>
-</body>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="assets/css/style.css" />
+        <link rel="stylesheet" href="assets/css/responsive.css" />
+        <title>Home - Menu Harian</title>
+    </head>
+    <body>
+        <header class="navbar-container">
+            <div class="navbar">
+                <h2>Menu Planner</h2>
+                <nav>
+                    <a href="index.html" class="active">Home</a>
+                    <a href="planner.html">Planner</a>
+                </nav>
+            </div>
+        </header>
+        <main>
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h3 class="shiny-text">SEHAT & PRAKTIS</h3>
+
+                    <h1 class="hero-title">
+                        Makan Enak, <span>Gizi Tetap Terjaga.</span>
+                    </h1>
+                    <p>
+                        Rencanakan menu harianmu dengan 5 kategori gizi seimbang
+                        secara praktis dan interaktif. Mulai hidup sehat dari
+                        piringmu hari ini.
+                    </p>
+
+                    <div class="wrap-buttons">
+                        <a href="planner.html" class="btn primary">
+                            Mulai Rencanakan Menu
+                        </a>
+                        <a href="#feature-section" class="btn outline">
+                            Pelajari Fitur
+                        </a>
+                    </div>
+                </div>
+                <aside class="hero-image">
+                    <img src="assets/images/hero-img.png" alt="Hero Icon" />
+                    <div class="overlay-text bottom left">
+                        <img
+                            src="assets/icons/daun.svg"
+                            alt="Daun Icon"
+                            class="primary"
+                        />
+                        <div class="text-wrapper">
+                            <h4>Sayuran Segar</h4>
+                            <h3>100% Origanik</h3>
+                        </div>
+                    </div>
+                    <div class="overlay-text right top">
+                        <img
+                            src="assets/icons/thunder.svg"
+                            alt="thunder.svg Icon"
+                            class="secondary"
+                        />
+                        <div class="text-wrapper">
+                            <h4>Energi Hari ini</h4>
+                            <h3>100 kkal</h3>
+                        </div>
+                    </div>
+                </aside>
+            </section>
+            <section class="feature-section" id="feature-section">
+                <header class="text-wrapper">
+                    <h3>Apa itu Menu Planner?</h3>
+                    <p>
+                        Solusi cerdas untuk mengatur pola makan yang lebih sehat
+                        tanpa ribet.
+                    </p>
+                </header>
+                <div class="feature-card-wrapper">
+                    <div class="feature-card">
+                        <img src="assets/icons/eat.svg" alt="Icon" />
+                        <h5>Pilih Menu</h5>
+                        <p>
+                            Pilih dari berbagai macam hidangan lezat dengan
+                            variasi rasa yang tidak membosankan setiap harinya.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="assets/icons/graph.svg" alt="Icon" />
+                        <h5>Pantau Nutrisi</h5>
+                        <p>
+                            Lacak asupan kalori dan estimasi harga secara
+                            real-time untuk mendukung gaya hidup sehat dan
+                            hemat.
+                        </p>
+                    </div>
+                    <div class="feature-card">
+                        <img src="assets/icons/libra.svg" alt="Icon" />
+                        <h5>Menu Seimbang</h5>
+                        <p>
+                            Pastikan kebutuhan nutrisi harianmu terpenuhi
+                            melalui 5 kategori gizi seimbang yang telah kami
+                            susun.
+                        </p>
+                    </div>
+                </div>
+            </section>
+            <section class="menu-favorite-section">
+                <header>
+                    <div class="text-wrapper" style="text-align: start;">
+                        <h5>Menu Favorit Minggu Ini.</h5>
+                        <p>Pilihan populer yang paling banyak di nikmati oleh pengguna kami.</p>
+                    </div>
+
+                    <a href="planner.html">Lihat Semua Menu &#129034;</a>
+                </header>
+
+                <div class="menu-card-wrapper">
+                    <div class="menu-card">
+                        <img src="assets/images/ayam-bakar-madu.png" alt="Icon">
+                        <div class="menu-content">
+                            <h3>Ayam Bakar Madu</h3>
+                            <div class="menu-info">
+                                <h6><img src="assets/icons/kkal.svg" alt="kkal icon"> 280 kkal</h6>
+                                <h4>Rp. 20.000</h4>
+                            </div>
+                        </div>
+                        <p class="label">Lauk-Pauk</p>
+                    </div>
+                    <div class="menu-card">
+                        <img src="assets/images/jus-alpukat.png" alt="Icon">
+                        <div class="menu-content">
+                            <h3>Jus Alpukat</h3>
+                            <div class="menu-info">
+                                <h6><img src="assets/icons/kkal.svg" alt="kkal icon"> 280 kkal</h6>
+                                <h4>Rp. 20.000</h4>
+                            </div>
+                        </div>
+                        <p class="label">Minuman</p>
+                    </div>
+                    <div class="menu-card">
+                        <img src="assets/images/gado-gado.png" alt="Icon">
+                        <div class="menu-content">
+                            <h3>Gado-Gado</h3>
+                            <div class="menu-info">
+                                <h6><img src="assets/icons/kkal.svg" alt="kkal icon"> 280 kkal</h6>
+                                <h4>Rp. 16.000</h4>
+                            </div>
+                        </div>
+                        <p class="label">Sayur</p>
+                    </div>
+                    <div class="menu-card">
+                        <img src="assets/images/beef-steak.png" alt="Icon">
+                        <div class="menu-content">
+                            <h3>Beef Steak Sirloin</h3>
+                            <div class="menu-info">
+                                <h6><img src="assets/icons/kkal.svg" alt="kkal icon"> 420 kkal</h6>
+                                <h4>Rp. 45.000</h4>
+                            </div>
+                        </div>
+                        <p class="label">Lauk-Pauk</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="footer-container">
+                <div class="footer-logo">Menu Planner</div>
+                <div class="footer-copy">
+                    © 2024 Menu Planner. All rights reserved.
+                </div>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div>
+        </footer>
+        <script src="assets/js/script.js"></script>
+    </body>
 </html>
