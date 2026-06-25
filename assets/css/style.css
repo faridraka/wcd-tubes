@@ -111,7 +111,7 @@ body {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center; /* Membuat konten terdistribusi seimbang secara vertikal */
+  justify-content: center;
   align-items: center;
 }
 
@@ -130,7 +130,7 @@ h6 {
 .container {
   width: 100%;
   max-width: 1440px;
-  padding: 60px 40px; /* Ditambahkan padding agar transisi space ke ujung layar lebih halus */
+  padding: 60px 40px;
   flex: 1 0 auto;
   flex-direction: column;
   justify-content: center;
@@ -156,11 +156,11 @@ h6 {
 }
 
 /* ==========================================================================
-   MAIN LAYOUT (Proporsi Kolom Diubah agar Tabel Lebih Luas)
+   MAIN LAYOUT 
    ========================================================================== */
 .main-wrapper {
   display: grid;
-  grid-template-columns: 2fr 0.9fr; /* Tabel dibuat mengambil sisa stretch space lebih dominan */
+  grid-template-columns: 2fr 0.9fr;
   gap: 35px;
   align-items: start;
 }
@@ -174,7 +174,7 @@ h6 {
 
 @media (max-width: 950px) {
   .main-wrapper {
-    grid-template-columns: 1fr; /* Stack vertikal saat layar mengecil */
+    grid-template-columns: 1fr;
     gap: 30px;
   }
   .container {
@@ -245,7 +245,7 @@ h6 {
   color: var(--color-text-muted);
 }
 
-/* Badges Kategori */
+/* Kategori */
 .badge {
   padding: 6px 14px;
   border-radius: 20px;
@@ -288,12 +288,10 @@ h6 {
   background-color: transparent;
   cursor: pointer;
 
-  /* Menggunakan flex standar untuk penengah vertikal/horizontal */
   display: inline-flex;
   align-items: center;
   justify-content: center;
 
-  /* Penyelaras vertikal agar sejajar rapi dengan teks di dalam baris <td> */
   vertical-align: middle;
 
   position: relative;
@@ -301,20 +299,17 @@ h6 {
   opacity: 0.4;
 }
 
-/* Hover Effect */
 .custom-checkbox:hover {
   opacity: 0.8;
   border-color: var(--color-primary-fixed-dim);
 }
 
-/* Checked State */
 .custom-checkbox:checked {
   background-color: var(--color-primary-fixed-dim);
   border-color: var(--color-primary-fixed-dim);
   opacity: 1;
 }
 
-/* Tanda Centang (Checkmark) dengan kalkulasi posisi box murni */
 .custom-checkbox:checked::before {
   content: "";
   position: absolute;
@@ -323,8 +318,6 @@ h6 {
   border-right: 2px solid var(--color-primary-on);
   border-bottom: 2px solid var(--color-primary-on);
   transform: rotate(45deg);
-
-  /* Menggeser poros sedikit ke atas secara absolut untuk kompensasi rotasi */
   top: 2px;
 }
 
@@ -346,7 +339,6 @@ h6 {
   font-weight: 600;
 }
 
-/* Grid Box Kosong */
 .selected-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -360,7 +352,6 @@ h6 {
   aspect-ratio: 1.25 / 1;
 }
 
-/* Kebutuhan Gizi Section */
 .gizi-section {
   margin-bottom: 24px;
 }
@@ -404,7 +395,6 @@ h6 {
   font-weight: bold;
 }
 
-/* Alert Box Menu Seimbang */
 .alert-box {
   background: var(--color-primary-container);
   border: 1px solid rgba(46, 204, 113, 0.25);
@@ -443,7 +433,6 @@ h6 {
   font-weight: bold;
 }
 
-/* Summary Details */
 .summary-total {
   border-top: 1px solid var(--color-outline-variant);
   padding-top: 18px;
@@ -467,7 +456,6 @@ h6 {
   color: var(--color-primary-fixed-dim);
 }
 
-/* Button Simpan Planner */
 .btn-submit {
   width: 100%;
   background-color: var(--color-primary-fixed-dim);
@@ -501,7 +489,7 @@ h6 {
 .footer-container {
   width: 100%;
   max-width: 1440px;
-  padding: 30px 40px; /* Padding disamakan dengan konten utama */
+  padding: 30px 40px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -527,7 +515,6 @@ h6 {
   color: var(--color-text);
 }
 
-/* Penyesuaian Footer pada Layar Kecil */
 @media (max-width: 600px) {
   .footer-container {
     flex-direction: column;
@@ -548,27 +535,32 @@ h6 {
   }
 }
 
-/* ================= 1. RESET & BASE STYLES ================= */
+/* ================= RESET & BASE STYLES ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px;
 
-body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #0b132b; /* Warna latar belakang gelap */
-  color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  min-height: 100vh;
-  padding: 40px 20px;
   gap: 80px;
 }
 
-/* ================= 2. SECTION STATISTIK ================= */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #0b132b;
+  color: #ffffff;
+  min-height: 100vh;
+}
+
+/* ================= SECTION STATISTIK ================= */
 .stats {
   display: flex;
   justify-content: space-around;
@@ -583,7 +575,7 @@ body {
 
 .stat-item h2 {
   font-size: 2.5rem;
-  color: #10b981; /* Warna hijau neon */
+  color: #10b981;
   font-weight: 700;
   margin-bottom: 5px;
 }
@@ -596,10 +588,10 @@ body {
 
 .stat-item p {
   font-size: 0.9rem;
-  color: #9ca3af; /* Abu-abu terang */
+  color: #9ca3af;
 }
 
-/* ================= 3. SECTION TESTIMONI ================= */
+/* ================= SECTION TESTIMONI ================= */
 .testimonial-section {
   width: 100%;
   max-width: 1000px;
@@ -639,7 +631,6 @@ body {
   min-height: 240px;
 }
 
-/* Style khusus untuk kartu "Paling Relevan" */
 .testimonial-card.active {
   border: 2px solid #10b981;
   box-shadow: 0 10px 25px -5px rgba(16, 185, 129, 0.15);
@@ -701,9 +692,10 @@ body {
 
 .cta {
   width: 100%;
-  max-width: 900px;
+  max-width: 1000px;
   background: linear-gradient(135deg, #10b981 0%, #059669 50%, #047857 100%);
   padding: 50px 40px;
+  margin: 0 auto;
   border-radius: 24px;
   text-align: center;
   position: relative;
@@ -758,7 +750,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* ================= 5. RESPONSIVE MEDIA QUERIES ================= */
+/* ================= RESPONSIVE MEDIA QUERIES ================= */
 @media (max-width: 768px) {
   body {
     padding: 20px;

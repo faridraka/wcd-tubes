@@ -3,8 +3,12 @@
 // ==========================================================================
 const menuTableBody = document.querySelector(".menu-table tbody");
 const selectedImagesGrid = document.querySelector(".selected-grid");
-const totalCaloriesText = document.querySelector(".total-row:nth-child(1) .total-val");
-const totalPriceText = document.querySelector(".total-row:nth-child(2) .total-val");
+const totalCaloriesText = document.querySelector(
+  ".total-row:nth-child(1) .total-val",
+);
+const totalPriceText = document.querySelector(
+  ".total-row:nth-child(2) .total-val",
+);
 const balancedMenuAlert = document.querySelector(".alert-box");
 const nutritionTags = document.querySelectorAll(".gizi-tag");
 
@@ -72,9 +76,9 @@ function renderMenuTable() {
 function handleCheckboxChange(clickEvent) {
   // Get the unique index number from the clicked checkbox
   const menuIndex = clickEvent.target.getAttribute("data-index");
-  
+
   // Update internal state array (true if checked, false if unchecked)
-  menuItems[menuIndex].isChecked = clickEvent.target.checked; 
+  menuItems[menuIndex].isChecked = clickEvent.target.checked;
 
   // Re-calculate and update everything on the page
   updatePlannerPage();
@@ -84,8 +88,7 @@ function handleCheckboxChange(clickEvent) {
 // 4. CORE PLANNED LOGIC (Calculations & Nutrition Checklist)
 // ==========================================================================
 function updatePlannerPage() {
-  
-  // --- STEP 1: Manually collect all selected/checked items using for loop ---
+  // --- Manually collect all selected/checked items using for loop ---
   const selectedItems = [];
   for (let index = 0; index < menuItems.length; index = index + 1) {
     if (menuItems[index].isChecked === true) {
@@ -93,7 +96,7 @@ function updatePlannerPage() {
     }
   }
 
-  // --- STEP 2: Calculate Total Calories and Total Price ---
+  // --- Calculate Total Calories and Total Price ---
   let totalCalories = 0;
   let totalPrice = 0;
 
@@ -107,8 +110,8 @@ function updatePlannerPage() {
   totalCaloriesText.textContent = `${totalCalories.toLocaleString("id-ID")} kkal`;
   totalPriceText.textContent = `Rp ${totalPrice.toLocaleString("id-ID")}`;
 
-  // --- STEP 3: Update Dynamic Image Grid / Empty State Handling ---
-  selectedImagesGrid.innerHTML = ""; 
+  // --- Update Dynamic Image Grid / Empty State Handling ---
+  selectedImagesGrid.innerHTML = "";
 
   if (selectedItems.length === 0) {
     selectedImagesGrid.innerHTML = `
@@ -119,7 +122,7 @@ function updatePlannerPage() {
   } else {
     for (let index = 0; index < selectedItems.length; index = index + 1) {
       const checkedItem = selectedItems[index];
-      
+
       let gridImageSource = checkedItem.image;
       if (gridImageSource.trim() === "") {
         gridImageSource = "https://placehold.co/100";
@@ -129,22 +132,22 @@ function updatePlannerPage() {
       newGridBox.classList.add("grid-box");
       newGridBox.style.overflow = "hidden";
       newGridBox.innerHTML = `<img src="${gridImageSource}" alt="${checkedItem.name}" style="width:100%; height:100%; object-fit:cover;" onerror="this.src='https://placehold.co/100'">`;
-      
+
       selectedImagesGrid.appendChild(newGridBox);
     }
   }
 
-  // --- STEP 4: Validate Checklist for 5 Nutrition Categories ---
-  let hasCarb = false;      // Pokok
-  let hasProtein = false;   // Lauk-Pauk
+  // --- Validate Checklist for 5 Nutrition Categories ---
+  let hasCarb = false; // Pokok
+  let hasProtein = false; // Lauk-Pauk
   let hasVegetable = false; // Sayur
-  let hasFruit = false;     // Buah
-  let hasDrink = false;     // Minuman
+  let hasFruit = false; // Buah
+  let hasDrink = false; // Minuman
 
   // Inspect selected items one by one to check categories
   for (let index = 0; index < selectedItems.length; index = index + 1) {
     const currentCategory = selectedItems[index].category;
-    
+
     if (currentCategory === "Pokok") {
       hasCarb = true;
     } else if (currentCategory === "Lauk-Pauk") {
@@ -178,12 +181,18 @@ function updatePlannerPage() {
     }
   }
 
-  // --- STEP 5: Toggle Display and Content for Dynamic Alert Box ---
+  // --- Toggle Display and Content for Dynamic Alert Box ---
   const alertIcon = balancedMenuAlert.querySelector(".alert-icon");
   const alertTitle = balancedMenuAlert.querySelector(".alert-title");
   const alertSub = balancedMenuAlert.querySelector(".alert-sub");
 
-  if (hasCarb === true && hasProtein === true && hasVegetable === true && hasFruit === true && hasDrink === true) {
+  if (
+    hasCarb === true &&
+    hasProtein === true &&
+    hasVegetable === true &&
+    hasFruit === true &&
+    hasDrink === true
+  ) {
     // SEIMBANG STATE (Green Neon)
     balancedMenuAlert.classList.remove("unresolved");
     alertIcon.textContent = "✓";
@@ -203,5 +212,5 @@ function updatePlannerPage() {
 // ==========================================================================
 document.addEventListener("DOMContentLoaded", () => {
   renderMenuTable();
-  updatePlannerPage();  
+  updatePlannerPage();
 });
