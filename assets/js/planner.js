@@ -36,20 +36,14 @@ function renderMenuTable() {
       badgeClassName = "minuman";
     }
 
-    // Handle empty image string protection
-    let imageSource = currentMenu.image;
-    if (imageSource.trim() === "") {
-      imageSource = "https://placehold.co/92";
-    }
-
     // Create a new table row element
     const newTableRow = document.createElement("tr");
 
-    // Fill table row with dynamic menu data
+    // Fill table row with dynamic menu data (Alternative photo logic removed)
     newTableRow.innerHTML = `
       <td>
         <div class="thumb-placeholder">
-          <img src="${imageSource}" alt="${currentMenu.name}" style="width:100%; height:100%; object-fit:cover; border-radius:6px;" onerror="this.src='https://placehold.co/92'">
+          <img src="${currentMenu.image}" alt="${currentMenu.name}" style="width:100%; height:100%; object-fit:cover; border-radius:6px;">
         </div>
       </td>
       <td><span class="menu-name">${currentMenu.name}</span></td>
@@ -123,15 +117,11 @@ function updatePlannerPage() {
     for (let index = 0; index < selectedItems.length; index = index + 1) {
       const checkedItem = selectedItems[index];
 
-      let gridImageSource = checkedItem.image;
-      if (gridImageSource.trim() === "") {
-        gridImageSource = "https://placehold.co/100";
-      }
-
       const newGridBox = document.createElement("div");
       newGridBox.classList.add("grid-box");
       newGridBox.style.overflow = "hidden";
-      newGridBox.innerHTML = `<img src="${gridImageSource}" alt="${checkedItem.name}" style="width:100%; height:100%; object-fit:cover;" onerror="this.src='https://placehold.co/100'">`;
+      // Alternative photo logic removed
+      newGridBox.innerHTML = `<img src="${checkedItem.image}" alt="${checkedItem.name}" style="width:100%; height:100%; object-fit:cover;">`;
 
       selectedImagesGrid.appendChild(newGridBox);
     }
@@ -199,13 +189,13 @@ function updatePlannerPage() {
     alertTitle.textContent = "Menu Seimbang!";
     alertSub.textContent = "NUTRISI TERPENUHI";
   } else {
-    // BELUM SEIMBANG STATE (Orange/Secondary Accent)
+    // BELUM SEIMBANG STATE (Red/Secondary Accent)
     balancedMenuAlert.classList.add("unresolved");
     alertIcon.textContent = "!";
     alertTitle.textContent = "Menu Belum Seimbang";
     alertSub.textContent = "PILIH MINIMAL 1 ITEM PER KATEGORI";
   }
-} // <--- Pembungkus fungsi updatePlannerPage() dikunci dengan benar di sini!
+}
 
 // ==========================================================================
 // 5. RUNTIME INITIALIZATION (Bootstrap System)
