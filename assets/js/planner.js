@@ -39,19 +39,18 @@ function renderMenuTable() {
     // Create a new table row element
     const newTableRow = document.createElement("tr");
 
-    // Fill table row with dynamic menu data (Alternative photo logic removed)
-    newTableRow.innerHTML = `
-      <td>
-        <div class="thumb-placeholder">
-          <img src="${currentMenu.image}" alt="${currentMenu.name}" style="width:100%; height:100%; object-fit:cover; border-radius:6px;">
-        </div>
-      </td>
-      <td><span class="menu-name">${currentMenu.name}</span></td>
-      <td><span class="badge badge-${badgeClassName}">${currentMenu.category}</span></td>
-      <td class="text-muted">${currentMenu.kkal} kkal</td>
-      <td>Rp ${currentMenu.price.toLocaleString("id-ID")}</td>
-      <td><input type="checkbox" class="custom-checkbox" data-index="${index}"></td>
-    `;
+  newTableRow.innerHTML = `
+    <td>
+      <div class="thumb-placeholder">
+        <img src="${currentMenu.image}" alt="${currentMenu.name}" style="width:100%; height:100%; object-fit:cover; border-radius:6px;">
+      </div>
+    </td>
+    <td><span class="menu-name">${currentMenu.name}</span></td>
+    <td><span class="badge badge-${badgeClassName}">${currentMenu.category.replace('-', ' ').trim()}</span></td>
+    <td class="text-muted">${currentMenu.kkal} kkal</td>
+    <td>${currentMenu.price.toLocaleString("id-ID")}</td>
+    <td><input type="checkbox" class="custom-checkbox" data-index="${index}"></td>
+  `;
 
     // Append the row to the HTML table body
     menuTableBody.appendChild(newTableRow);
