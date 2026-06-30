@@ -139,6 +139,7 @@
 
     /* CTA Section */
     .cta {
+        width: calc(100% - 40px);
         margin: 48px 20px;
         padding: 48px 32px;
     }
@@ -314,6 +315,7 @@
 
     /* CTA Section */
     .cta {
+        width: 100%;
         margin: 40px 0;
         padding: 40px 24px;
         border-radius: 0;
