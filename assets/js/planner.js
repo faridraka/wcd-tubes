@@ -36,28 +36,21 @@ function renderMenuTable() {
       badgeClassName = "minuman";
     }
 
-    // Handle empty image string protection
-    let imageSource = currentMenu.image;
-    if (imageSource.trim() === "") {
-      imageSource = "https://placehold.co/92";
-    }
-
     // Create a new table row element
     const newTableRow = document.createElement("tr");
 
-    // Fill table row with dynamic menu data
-    newTableRow.innerHTML = `
-      <td>
-        <div class="thumb-placeholder">
-          <img src="${imageSource}" alt="${currentMenu.name}" style="width:100%; height:100%; object-fit:cover; border-radius:6px;" onerror="this.src='https://placehold.co/92'">
-        </div>
-      </td>
-      <td><span class="menu-name">${currentMenu.name}</span></td>
-      <td><span class="badge badge-${badgeClassName}">${currentMenu.category}</span></td>
-      <td class="text-muted">${currentMenu.kkal} kkal</td>
-      <td>Rp ${currentMenu.price.toLocaleString("id-ID")}</td>
-      <td><input type="checkbox" class="custom-checkbox" data-index="${index}"></td>
-    `;
+  newTableRow.innerHTML = `
+    <td>
+      <div class="thumb-placeholder">
+        <img src="${currentMenu.image}" alt="${currentMenu.name}" style="width:100%; height:100%; object-fit:cover; border-radius:6px;">
+      </div>
+    </td>
+    <td><span class="menu-name">${currentMenu.name}</span></td>
+    <td><span class="badge badge-${badgeClassName}">${currentMenu.category.replace('-', ' ').trim()}</span></td>
+    <td class="text-muted">${currentMenu.kkal} kkal</td>
+    <td>${currentMenu.price.toLocaleString("id-ID")}</td>
+    <td><input type="checkbox" class="custom-checkbox" data-index="${index}"></td>
+  `;
 
     // Append the row to the HTML table body
     menuTableBody.appendChild(newTableRow);
@@ -123,15 +116,11 @@ function updatePlannerPage() {
     for (let index = 0; index < selectedItems.length; index = index + 1) {
       const checkedItem = selectedItems[index];
 
-      let gridImageSource = checkedItem.image;
-      if (gridImageSource.trim() === "") {
-        gridImageSource = "https://placehold.co/100";
-      }
-
       const newGridBox = document.createElement("div");
       newGridBox.classList.add("grid-box");
       newGridBox.style.overflow = "hidden";
-      newGridBox.innerHTML = `<img src="${gridImageSource}" alt="${checkedItem.name}" style="width:100%; height:100%; object-fit:cover;" onerror="this.src='https://placehold.co/100'">`;
+      // Alternative photo logic removed
+      newGridBox.innerHTML = `<img src="${checkedItem.image}" alt="${checkedItem.name}" style="width:100%; height:100%; object-fit:cover;">`;
 
       selectedImagesGrid.appendChild(newGridBox);
     }
@@ -199,13 +188,13 @@ function updatePlannerPage() {
     alertTitle.textContent = "Menu Seimbang!";
     alertSub.textContent = "NUTRISI TERPENUHI";
   } else {
-    // BELUM SEIMBANG STATE (Orange/Secondary Accent)
+    // BELUM SEIMBANG STATE (Red/Secondary Accent)
     balancedMenuAlert.classList.add("unresolved");
     alertIcon.textContent = "!";
     alertTitle.textContent = "Menu Belum Seimbang";
     alertSub.textContent = "PILIH MINIMAL 1 ITEM PER KATEGORI";
   }
-} // <--- Pembungkus fungsi updatePlannerPage() dikunci dengan benar di sini!
+}
 
 // ==========================================================================
 // 5. RUNTIME INITIALIZATION (Bootstrap System)

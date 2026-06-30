@@ -323,7 +323,7 @@
         -moz-border-radius: 0;
         -ms-border-radius: 0;
         -o-border-radius: 0;
-}
+    }
 
     .cta h2 {
         font-size: 1.8rem;
@@ -336,5 +336,65 @@
     .cta button {
         width: 100%;
         padding: 16px 24px;
+    }
+
+    /* ==========================================================================
+       MODIFIKASI: STRUKTUR STRATEGI FLEX-URUTAN (DARI BAWAH KE ATAS)
+       ========================================================================== */
+    .main-wrapper {
+        display: flex !important;       /* Mengubah Grid menjadi Flex kontainer vertikal */
+        flex-direction: column !important;
+        gap: 30px;
+        width: 100%;
+    }
+
+    /* Ringkasan Pilihanmu (Sidebar) melompat naik ke posisi paling pertama */
+    .sidebar {
+        order: 1 !important;
+        width: 100%;
+    }
+
+    /* Lembar Tabel Menu Utama (Menu Section) turun ke posisi kedua di bawahnya */
+    .menu-section {
+        order: 2 !important;
+        padding: 8px;
+    }
+
+    /* Table Responsive Adjustments - Mobile */
+    .menu-table {
+        min-width: 100%; /* Memaksa tabel menyesuaikan lebar layar */
+    }
+
+    .menu-table th {
+        padding: 8px 4px;
+        font-size: 0.5rem;
+        letter-spacing: 0;
+    }
+
+    .menu-table td {
+        padding: 8px 4px;
+        font-size: 0.75rem;
+    }
+
+    .thumb-placeholder {
+        width: 36px;
+        height: 36px;
+    }
+
+    .thumb-placeholder .emoji {
+        font-size: 1rem;
+    }
+
+    .menu-name {
+        font-size: 0.75rem;
+    }
+
+    .badge {
+        padding: 4px 6px;
+        font-size: 0.6rem;
+        display: inline-block;
+        white-space: nowrap;
+        word-spacing: 0px;
+        letter-spacing: -0.02em;
     }
 }
